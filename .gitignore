@@ -1,0 +1,31 @@
+# 1. Credenciais e Variáveis de Ambiente (SEGURANÇA MAXIMA)
+.env
+.env.*
+*.local
+
+# 2. Banco de Dados Local (Bind Mount do Docker)
+/data/
+
+# 3. Frontend (Node.js / Next.js)
+node_modules/
+.next/
+out/
+build/
+npm-debug.log*
+
+# 4. Backend (Java / Maven)
+target/
+*.jar
+*.war
+.mvn/wrapper/maven-wrapper.jar
+
+# 5. Configurações de IDEs e Sistema Operacional
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db

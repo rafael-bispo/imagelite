@@ -1,0 +1,15 @@
+# Ignorar dados do banco de dados local
+data/
+db/
+
+# Ignorar arquivos compilados do Java (o Maven vai gerar novos lá dentro)
+target/
+*.jar
+
+# Ignorar pastas da IDE e do Git
+.idea/
+.git/
+.vscode/
+
+# Ignorar o próprio arquivo do compose
+docker-compose.yml
