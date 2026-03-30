@@ -67,11 +67,13 @@ class AuthService{
         try{
             const authString = localStorage.getItem(AuthService.AUTH_PARAM);
 
+            //verifica se tem o token
             if(!authString){
                 return null;
             }
 
             const token: UserSessionToken = JSON.parse(authString);
+
             return token;
         }catch(error){
             return null;
@@ -89,7 +91,13 @@ class AuthService{
 
         if(expiration){
             const expirationDateInMillis = expiration * 1000;
-            return new Date() < new Date(expirationDateInMillis);
+
+            if(new Date() < new Date(expirationDateInMillis)){
+                return true;
+            }
+            
+            //elimna tokens já vencidos para não aparecer o header com nome de outro usuário
+            this.invalidateSession();             
         }
 
 
